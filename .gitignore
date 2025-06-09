@@ -1,40 +1,22 @@
-# gradle
+# Java
+*.class
 
+# Gradle
 .gradle/
 build/
 out/
-classes/
 
-# eclipse
-
-*.launch
-
-# idea
-
+# IntelliJ
 .idea/
 *.iml
-*.ipr
-*.iws
 
-# vscode
+# OS
+.DS_Store
+Thumbs.db
 
-.settings/
-.vscode/
-bin/
-.classpath
-.project
+# Logs
+logs/
+*.log
 
-# macos
-
-*.DS_Store
-
-# fabric
-
-run/
-
-# java
-
-hs_err_*.log
-replay_*.log
-*.hprof
-*.jfr
+# JARs (si tu les compiles)
+*.jar
