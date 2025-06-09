@@ -1,0 +1,12 @@
+{
+
+  "category.odmgearclientmod": "ODM Gear Controls",
+  "key.odmgearclientmod.reel": "Reel In",
+  "key.odmgearclientmod.detach_hook": "Detach Hook",
+  "key.odmgearclientmod.gas_thrust": "Gas Thrust",
+  "key.odmgearclientmod.dispense_gas_left": "Dispense Gas Left",
+  "key.odmgearclientmod.dispense_gas_right": "Dispense Gas Right",
+  "key.odmgearclientmod.reel_wires_out": "Reel Wires Out",
+  "key.odmgearclientmod.reload_blades": "Reload Blades",
+  "category.odmgearclientmod": "ODM Gear Mod"
+}
