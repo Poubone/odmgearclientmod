@@ -1,11 +1,11 @@
 package fr.poubone;
 
-import io.netty.buffer.Unpooled;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import org.lwjgl.glfw.GLFW;
@@ -18,6 +18,13 @@ public class OdmGearClientModClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		PayloadTypeRegistry.playC2S().register(SendOneC2SPayload.ID, SendOneC2SPayload.CODEC);
+
+		// Send an initial integer on join using the same channel as key presses
+		ClientPlayConnectionEvents.JOIN.register((handler, sender, client) -> {
+			if (ClientPlayNetworking.canSend(SendOneC2SPayload.ID)) {
+				ClientPlayNetworking.send(new SendOneC2SPayload(0));
+			}
+		});
 
 		keys = new KeyBinding[] {
 				registerKey("reel", GLFW.GLFW_KEY_P),             // ID = 1

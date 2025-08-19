@@ -20,3 +20,7 @@ logs/
 
 # JARs (si tu les compiles)
 *.jar
+run/options.txt
+run/config/fabric/indigo-renderer.properties
+run/data/fabricDefaultResourcePacks.dat
+run/downloads/log.json
